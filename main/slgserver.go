@@ -9,9 +9,9 @@ import (
 	"github.com/llr104/slgserver/server/slgserver/run"
 )
 
-
 func getServerAddr() string {
-	host := config.File.MustValue("slgserver", "host", "")
+	host := config.File.MustValue("slgserver", "host", "127.0.0.1")
+	//host := config.File.MustValue("slgserver", "host", "")
 	port := config.File.MustValue("slgserver", "port", "8001")
 	return host + ":" + port
 }
@@ -24,5 +24,3 @@ func main() {
 	s.Router(run.MyRouter)
 	s.Start()
 }
-
-

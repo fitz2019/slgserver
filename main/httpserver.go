@@ -24,7 +24,8 @@ func main() {
 }
 
 func getHttpAddr() string {
-	host := config.File.MustValue("httpserver", "host", "")
+	host := config.File.MustValue("httpserver", "host", "127.0.0.1")
+	//host := config.File.MustValue("httpserver", "host", "")
 	port := config.File.MustValue("httpserver", "port", "8088")
 	return host + ":" + port
 }
